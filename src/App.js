@@ -13,8 +13,8 @@ function App() {
       <FoodDialog />
       <Navbar />
       <Banner />
-      <div>{openFood}</div>
       <Menu setOpenFood={setOpenFood} />
+      <div>{openFood}</div>
     </>
   );
 }
