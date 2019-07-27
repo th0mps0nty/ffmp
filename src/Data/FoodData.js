@@ -1,49 +1,74 @@
+export function formatPrice(intPrice) {
+  return intPrice.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD'
+  });
+}
+
 export const foodItems = [
   // Proteins
   {
     name: 'Cod',
     img: '/img/cod.jpeg',
-    section: 'Protein'
+    section: 'Protein',
+    price: '$12.00',
+    intPrice: 12
   },
   {
     name: 'Salmon',
     img: '/img/salmon.jpg',
-    section: 'Protein'
+    section: 'Protein',
+    price: '$12.00',
+    intPrice: 12
   },
   {
     name: 'Steak',
     img: '/img/steak.jpg',
-    section: 'Protein'
+    section: 'Protein',
+    price: '$12.00',
+    intPrice: 12
   },
   {
     name: 'Chicken Breast',
     img: '/img/chicken-breast.jpg',
-    section: 'Protein'
+    section: 'Protein',
+    price: '$10.00',
+    intPrice: 10
   },
   {
     name: 'Chicken Sausage',
     img: '/img/chicken-sausage.jpg',
-    section: 'Protein'
+    section: 'Protein',
+    price: '$10.00',
+    intPrice: 10
   },
   {
     name: 'Turkey Breast',
     img: '/img/turkey-breast.jpg',
-    section: 'Protein'
+    section: 'Protein',
+    price: '$10.00',
+    intPrice: 10
   },
   {
     name: 'Turkey Patty',
     img: '/img/turkey-patty.jpg',
-    section: 'Protein'
+    section: 'Protein',
+    price: '$10.00',
+    intPrice: 10
   },
   {
     name: 'Turkey Tenderloin',
     img: '/img/turkey-tenderloin.jpg',
-    section: 'Protein'
+    section: 'Protein',
+    price: '$10.00',
+    intPrice: 10
   },
   {
     name: 'Turkey Sausage',
     img: '/img/turkey-sausage.jpg',
-    section: 'Protein'
+    section: 'Protein',
+    price: '$10.00',
+    intPrice: 10
   },
   // Flavors
   {
