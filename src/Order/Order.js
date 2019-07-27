@@ -24,13 +24,45 @@ const OrderContent = styled(DialogContent)`
   height: 100%;
 `;
 
+const OrderContainer = styled.div`
+  padding: 10px 0px;
+  border-bottom: 1px solid grey;
+  ${({ editable }) =>
+    editable
+      ? `
+    &:hover {
+      cursor: pointer;
+      background-color: #e7e7e7;
+    }
+  `
+      : `
+    pointer-events: none; 
+  `}
+`;
+
+const OrderItem = styled.div`
+  padding: 10px 0px;
+  // display: grid;
+  // grid-template-columns: 20px 150px 20px 60px;
+  // justify-content: space-between;
+`;
+
 export function Order({ orders }) {
   return (
     <OrderStyled>
       {orders.length === 0 ? (
         <OrderContent>Your Order's looking empty!</OrderContent>
       ) : (
-        <OrderContent> Found {orders.length} orders</OrderContent>
+        <OrderContent>
+          {' '}
+          <OrderContainer>Your Order:</OrderContainer>
+          {''}
+          {orders.map(order => (
+            <OrderContainer>
+              <OrderItem>{order.name}</OrderItem>
+            </OrderContainer>
+          ))}
+        </OrderContent>
       )}
       <DialogFooter>
         <ConfirmButton>Checkout</ConfirmButton>
