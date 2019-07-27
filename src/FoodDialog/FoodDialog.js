@@ -3,13 +3,14 @@ import styled from 'styled-components';
 
 const Dialog = styled.div`
   width: 500px;
-  height: 2000px;
   background-color: white;
-  position: fixed:
+  position: fixed;
   top: 75px;
   z-index: 5;
   max-height: calc(100% - 100px);
   left: calc(50% - 250px);
+  display: flex;
+  flex-direction: column;
 `;
 
 const DialogShadow = styled.div`

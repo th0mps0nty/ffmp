@@ -21,9 +21,9 @@ export const Food = styled.div`
   background-image: ${({ img }) => `url(${img});`};
   background-position: center;
   background-size: cover;
-  margin-top: 5px;
   filter: contrast(75%);
   border-radius: 7px;
+  margin-top: 5px;
   transition-property: box-shadow margin-top filter;
   transition-duration: 0.1s;
   box-shadow: 0px 0px 2px 0px grey;
