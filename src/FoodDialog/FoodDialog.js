@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FoodLabel } from '../Menu/FoodGrid';
 
 const Dialog = styled.div`
   width: 500px;
@@ -23,11 +24,33 @@ const DialogShadow = styled.div`
   z-index: 4;
 `;
 
-export function FoodDialog() {
-  return (
+const DialogBanner = styled.div`
+  min-height: 200px;
+  margin-bottom: 20px;
+  ${({ img }) => `background-image: url(${img});`}
+  background-position: center;
+  background-size: cover;
+`;
+
+const DialogBannerName = styled(FoodLabel)`
+  top: 50px;
+  font-size: 30px;
+  padding: 5px 40px;
+`;
+
+export function FoodDialog({ openFood, setOpenFood }) {
+  function close() {
+    setOpenFood();
+  }
+  if (!openFood) return null;
+  return openFood ? (
     <>
-      <DialogShadow />
-      <Dialog> Test Dialog </Dialog>
+      <DialogShadow onClick={close} />
+      <Dialog>
+        <DialogBanner img={openFood.img}>
+          <DialogBannerName>{openFood.name}</DialogBannerName>
+        </DialogBanner>
+      </Dialog>
     </>
-  );
+  ) : null;
 }
