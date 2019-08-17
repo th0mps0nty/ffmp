@@ -12,27 +12,30 @@ const MenuStyled = styled.div`
 export function Menu({ setOpenFood }) {
   return (
     <MenuStyled>
-      {Object.entries(foods).map(([sectionName, foods]) => (
-        <>
-          <h1> {sectionName} </h1>
-          <FoodGrid>
-            {foods.map(food => (
-              <Food
-                img={food.img}
-                onClick={() => {
-                  setOpenFood(food);
-                }}
-              >
-                <FoodLabel>
-                  <div>{food.name}</div>
-                  <div>{food.price}</div>
-                  {/* <div>{formatPrice(food.intPrice)}</div> */}
-                </FoodLabel>
-              </Food>
-            ))}
-          </FoodGrid>
-        </>
-      ))}
+      {Object.entries(foods).map(([sectionName, foods]) =>
+        sectionName === 'Protein' ? (
+          <>
+            <h1> {sectionName} </h1>
+            <FoodGrid>
+              {foods.map(food => (
+                <Food
+                  img={food.img}
+                  onClick={() => {
+                    setOpenFood(food);
+                  }}
+                >
+                  <FoodLabel>
+                    <div>{food.name}</div>
+                    <div>{food.price}</div>
+                    {/* <div>{formatPrice(food.intPrice)}</div> */}
+                  </FoodLabel>
+                </Food>
+              ))}
+            </FoodGrid>
+          </>
+        ) : null
+      )}
+      <img src="/img/logo.png" alt="Logo" height="200" width="200" />
     </MenuStyled>
   );
 }
