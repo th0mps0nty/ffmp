@@ -7,6 +7,8 @@ import { formatPrice } from '../Data/FoodData';
 import { QuantityInput } from './QuantityInput';
 import { useQuantity } from '../Hooks/useQuantity';
 import { Toppings } from './Toppings';
+import { useFlavors } from '../Hooks/useFlavors';
+import { Flavors } from './Flavors';
 import { useToppings } from '../Hooks/useToppings';
 import { useChoice } from '../Hooks/useChoice';
 import { Choices } from './Choices';
@@ -97,6 +99,7 @@ const isProtein = food => {
 function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
   const quantity = useQuantity(openFood && openFood.quantity);
   const toppings = useToppings(openFood.toppings);
+  const flavors = useFlavors(openFood.flavors);
   const choiceRadio = useChoice(openFood.choice);
   const isEditing = openFood.index > -1;
 
@@ -108,6 +111,7 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
     ...openFood,
     quantity: quantity.value,
     toppings: toppings.toppings,
+    flavorss: flavors.flavors,
     choice: choiceRadio.value
   };
 
@@ -135,7 +139,7 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
           {isProtein(openFood) && (
             <>
               <h3> Please Choose Your Flavor! </h3>
-              <Toppings {...toppings} />
+              <Flavors {...flavors} />
             </>
           )}
           {openFood.choices && (

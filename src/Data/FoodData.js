@@ -73,8 +73,9 @@ export const foodItems = [
   // Flavors
   {
     name: 'Flavors',
-    section: 'Flavors Pictures',
-    choices: [{
+    section: 'Flavors',
+    choices: [
+      {
         name: 'Plain',
         img: '/img/plain.jpg'
       },
@@ -101,28 +102,15 @@ export const foodItems = [
       {
         name: 'Lemon Pepper',
         img: '/img/lemon-pepper.jpg'
-      },
-    ]
-  },
-  {
-    price: null,
-    name: 'Flavors',
-    section: 'Flavors List',
-    choices: [
-      'Plain',
-      'Garlic',
-      'Extra Spicy',
-      'Garlic & Pepper',
-      'Southwest Chipotle',
-      'Tomato Basil Garlic',
-      'Lemon Pepper'
+      }
     ]
   },
   // Veggies
   {
     name: 'Veggies',
-    section: 'Veggies Pictures',
-    choices: [{
+    section: 'Veggies',
+    choices: [
+      {
         name: 'Broccoli',
         img: '/img/broccoli.jpg'
       },
@@ -165,32 +153,15 @@ export const foodItems = [
       {
         name: 'Zucchini / Squash',
         img: '/img/zucchini.jpg'
-      },
-    ]
-  },
-  {
-    price: null,
-    name: 'Veggies',
-    section: 'Veggies List',
-    choices: [
-      'Broccoli',
-      'Asparagus',
-      'Spinach',
-      'Carrots',
-      'Kale',
-      'Brussel Sprouts',
-      'Cauliflower',
-      'Collard Greens',
-      'Bell Peppers',
-      'Green Beans',
-      'Zucchini / Squash'
+      }
     ]
   },
   // Sides
   {
     name: 'Sides',
-    section: 'Side Pictures',
-    choices: [{
+    section: 'Sides',
+    choices: [
+      {
         name: 'Brown Rice',
         img: '/img/brown-rice.jpg'
       },
@@ -221,22 +192,7 @@ export const foodItems = [
       {
         name: 'Roasted Corn',
         img: '/img/roasted-corn.jpg'
-      },
-    ]
-  },
-  {
-    price: null,
-    name: 'Sides',
-    section: 'Side List',
-    choices: [
-      'Brown Rice',
-      'Quinoa',
-      'Jasmine Rice',
-      'Fresh Fruit',
-      'Sweet Potatoes',
-      'Black Beans & Tomatoes',
-      'Chickpeas & Kidney',
-      'Roasted Corn'
+      }
     ]
   }
 ];
