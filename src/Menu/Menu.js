@@ -9,6 +9,13 @@ const MenuStyled = styled.div`
   margin: 0px 400px 50px 20px;
 `;
 
+const LogoStyled = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+`;
+
 export function Menu({ setOpenFood }) {
   return (
     <MenuStyled>
@@ -35,7 +42,9 @@ export function Menu({ setOpenFood }) {
           </>
         ) : null
       )}
-      <img src="/img/logo.png" alt="Logo" height="200" width="200" />
+      <LogoStyled>
+        <img src="/img/logo.png" alt="Logo" height="250" width="250" />
+      </LogoStyled>
     </MenuStyled>
   );
 }
