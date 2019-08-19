@@ -6,15 +6,18 @@ import { Title } from '../Styles/title.js';
 import { formatPrice } from '../Data/FoodData';
 import { QuantityInput } from './QuantityInput';
 import { useQuantity } from '../Hooks/useQuantity';
-import { Toppings } from './Toppings';
 import { useFlavors } from '../Hooks/useFlavors';
 import { Flavors } from './Flavors';
+import { Sides } from './Sides';
+import { Veggies } from './Veggies';
 import { useToppings } from '../Hooks/useToppings';
 import { useChoice } from '../Hooks/useChoice';
 import { Choices } from './Choices';
+import { useSides } from '../Hooks/useSides';
+import { useVeggies } from '../Hooks/useVeggies';
 
 const Dialog = styled.div`
-  width: 500px;
+  width: 35vw;
   background-color: white;
   position: fixed;
   top: 75px;
@@ -100,6 +103,8 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
   const quantity = useQuantity(openFood && openFood.quantity);
   const toppings = useToppings(openFood.toppings);
   const flavors = useFlavors(openFood.flavors);
+  const veggies = useVeggies(openFood.veggies);
+  const sides = useSides(openFood.sides);
   const choiceRadio = useChoice(openFood.choice);
   const isEditing = openFood.index > -1;
 
@@ -111,7 +116,9 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
     ...openFood,
     quantity: quantity.value,
     toppings: toppings.toppings,
-    flavorss: flavors.flavors,
+    flavors: flavors.flavors,
+    veggies: veggies.veggies,
+    sides: sides.sides,
     choice: choiceRadio.value
   };
 
@@ -140,6 +147,12 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
             <>
               <h3> Please Choose Your Flavor! </h3>
               <Flavors {...flavors} />
+              <hr />
+              <h3> Please Choose Your Veggies! </h3>
+              <Veggies {...veggies} />
+              <hr />
+              <h3> Please Choose Your Side! </h3>
+              <Sides {...sides} />
             </>
           )}
           {openFood.choices && (

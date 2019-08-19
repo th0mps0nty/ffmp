@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import React from 'react';
 
-const FlavorGrid = styled.div`
+const VeggieGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 `;
 
-const FlavorCheckbox = styled.input`
+const VeggieCheckbox = styled.input`
   margin-right: 10px;
   cursor: pointer;
 `;
@@ -15,23 +15,23 @@ const CheckboxLabel = styled.label`
   cursor: pointer;
 `;
 
-export function Flavors({ flavors, checkFlavor }) {
+export function Veggies({ veggies, checkVeggie }) {
   return (
-    <FlavorGrid>
-      {flavors.map((flavor, i) => (
+    <VeggieGrid>
+      {veggies.map((veggie, i) => (
         <CheckboxLabel>
-          <FlavorCheckbox
+          <VeggieCheckbox
             type="radio"
-            checked={flavor.checked}
-            name="flavor"
-            value={flavor.name}
+            checked={veggie.checked}
+            name="veggie"
+            value={veggie.name}
             onClick={() => {
-              checkFlavor(i);
+              checkVeggie(i);
             }}
           />
-          {flavor.name}
+          {veggie.name}
         </CheckboxLabel>
       ))}
-    </FlavorGrid>
+    </VeggieGrid>
   );
 }

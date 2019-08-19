@@ -10,9 +10,10 @@ const MenuStyled = styled.div`
 `;
 
 const LogoStyled = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-image: url(img/logo.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
   height: 250px;
 `;
 
@@ -42,9 +43,7 @@ export function Menu({ setOpenFood }) {
           </>
         ) : null
       )}
-      <LogoStyled>
-        <img src="/img/logo.png" alt="Logo" height="250" width="250" />
-      </LogoStyled>
+      <LogoStyled />
     </MenuStyled>
   );
 }
