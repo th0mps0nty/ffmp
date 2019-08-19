@@ -9,6 +9,8 @@ const NavbarStyled = styled.div`
   position: fixed;
   width: 100%;
   z-index: 999;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const Logo = styled(Title)`
@@ -17,10 +19,27 @@ const Logo = styled(Title)`
   text-shadow: 1px 1px 4px black;
 `;
 
-export function Navbar() {
+const UserStatus = styled.div`
+  color: white;
+  font-size: 12px;
+  margin-right: 30px;
+`;
+
+const LoginButton = styled.span`
+  cursor: pointer;
+`;
+
+export function Navbar({ login, loggedIn }) {
   return (
     <NavbarStyled>
       <Logo>FitFam Meal Prep</Logo>
+      <UserStatus>
+        {loggedIn ? (
+          'Logged In'
+        ) : (
+          <LoginButton onClick={login}> Log In / Sign Up </LoginButton>
+        )}
+      </UserStatus>
     </NavbarStyled>
   );
 }
