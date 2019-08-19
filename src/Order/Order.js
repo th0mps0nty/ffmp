@@ -100,9 +100,21 @@ export function Order({ orders, setOrders, setOpenFood }) {
                 <div>{formatPrice(getPrice(order))}</div>
               </OrderItem>
               <DetailItem>
-                {order.toppings
-                  .filter(t => t.checked)
-                  .map(topping => topping.name)
+                {order.flavors
+                  .filter(f => f.checked)
+                  .map(flavor => flavor.name)
+                  .join(', ')}
+              </DetailItem>
+              <DetailItem>
+                {order.veggies
+                  .filter(v => v.checked)
+                  .map(veggie => veggie.name)
+                  .join(', ')}
+              </DetailItem>
+              <DetailItem>
+                {order.sides
+                  .filter(s => s.checked)
+                  .map(side => side.name)
                   .join(', ')}
               </DetailItem>
               {order.choice && <DetailItem>{order.choice}</DetailItem>}

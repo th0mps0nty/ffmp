@@ -17,7 +17,7 @@ import { useSides } from '../Hooks/useSides';
 import { useVeggies } from '../Hooks/useVeggies';
 
 const Dialog = styled.div`
-  width: 35vw;
+  width: 500px;
   background-color: white;
   position: fixed;
   top: 75px;
@@ -32,7 +32,7 @@ export const DialogContent = styled.div`
   overflow: auto;
   min-height: 100px;
   padding: 0px 40px;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 `;
 
 export const DialogFooter = styled.div`
@@ -145,13 +145,13 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
           <QuantityInput quantity={quantity} />
           {isProtein(openFood) && (
             <>
-              <h3> Please Choose Your Flavor! </h3>
+              <h3> Choose Your Flavor! </h3>
               <Flavors {...flavors} />
               <hr />
-              <h3> Please Choose Your Veggies! </h3>
+              <h3> Choose Your Veggies! </h3>
               <Veggies {...veggies} />
               <hr />
-              <h3> Please Choose Your Side! </h3>
+              <h3> Choose Your Side! </h3>
               <Sides {...sides} />
             </>
           )}

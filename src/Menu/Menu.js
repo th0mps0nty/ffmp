@@ -23,7 +23,7 @@ export function Menu({ setOpenFood }) {
       {Object.entries(foods).map(([sectionName, foods]) =>
         sectionName === 'Protein' ? (
           <>
-            <h1> {sectionName} </h1>
+            <h1> Choose Your {sectionName} </h1>
             <FoodGrid>
               {foods.map(food => (
                 <Food
