@@ -29,15 +29,22 @@ const LoginButton = styled.span`
   cursor: pointer;
 `;
 
-export function Navbar({ login, loggedIn }) {
+export function Navbar({ login, logout, loggedIn }) {
   return (
     <NavbarStyled>
       <Logo>FitFam Meal Prep</Logo>
       <UserStatus>
-        {loggedIn ? (
-          'Logged In'
+        {loggedIn !== 'loading' ? (
+          <>
+            👤 {loggedIn ? `Hello ${loggedIn.displayName}` : ''}
+            {loggedIn ? (
+              <LoginButton onClick={logout}> Log out </LoginButton>
+            ) : (
+              <LoginButton onClick={login}> Log in / Sign up </LoginButton>
+            )}
+          </>
         ) : (
-          <LoginButton onClick={login}> Log In / Sign Up </LoginButton>
+          'loading...'
         )}
       </UserStatus>
     </NavbarStyled>
