@@ -10,13 +10,6 @@ import { useOrders } from './Hooks/useOrders';
 import { useTitle } from './Hooks/useTitle';
 import { useAuthentication } from './Hooks/useAuth';
 
-const database = window.firebase.database();
-const refTest = database.ref('orders').push();
-
-refTest.set({
-  hello: 'world'
-});
-
 function App() {
   const openFood = useOpenFood();
   const orders = useOrders();
