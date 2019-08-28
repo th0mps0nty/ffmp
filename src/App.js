@@ -11,7 +11,7 @@ import { useTitle } from './Hooks/useTitle';
 import { useAuthentication } from './Hooks/useAuth';
 
 const database = window.firebase.database();
-const refTest = database.ref('testObj').push();
+const refTest = database.ref('orders').push();
 
 refTest.set({
   hello: 'world'
